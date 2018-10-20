@@ -15,7 +15,9 @@ console.log('Hola Mundo');
 
 var server = http.createServer(function servercallback(request, response) {
   console.log('Recibí un request ' + request.url);
-  response.writeHead('Content-Type', 'text/plane'); //código para que la página pueda devolver algo
+  response.writeHead(200, {
+    'Content-Type': 'text/plain'
+  }); //código para que la página pueda devolver algo
   response.end('Saludando desde el servidor iniciado'); //y no se quede en un loop infinito
 });
 server.listen(3000, function() {
